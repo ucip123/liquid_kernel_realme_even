@@ -30,7 +30,7 @@ jobs:
       with:
         arch: arm64
         compiler: gcc/12
-        defconfig: vince_defconfig
+        defconfig: even_defconfig
         image: Image.gz-dtb
 
     - name: Release build
