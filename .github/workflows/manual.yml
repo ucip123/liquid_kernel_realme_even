@@ -22,8 +22,8 @@ jobs:
         repository: ucip123/AnyKernel3
         path: zipper
 
-    - name: Android kernel build
-      uses: lemniskett/android-kernel-actions@master
+    - name: building the android kernel
+      uses: ucip123/android-kernel-actions@master
       id: build
       env:
         NAME: ucipo12
