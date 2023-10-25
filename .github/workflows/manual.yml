@@ -29,7 +29,7 @@ jobs:
         NAME: ucipo12
       with:
         arch: arm64
-        compiler: gcc/12
+        compiler: clang/15/binutils
         defconfig: even_defconfig
         image: Image.gz-dtb
 
