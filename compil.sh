@@ -15,16 +15,20 @@ sleep 1
 echo membuild kernel.......
 sleep 2
 
+read -p "ada pesan? : " pesan
+curl -F name=text -F text="$pesan"   -H "Content-Type:multipart/form-data" "https://api.telegram.org/bot5879794084:AAEtYbuY5NylDuNYK4WL0oVFoDaboVt7Z3g/sendMessage?chat_id=-1001850488353"
+
+
 #ubah nama kernel dan dev builder
 export ARCH=arm64
 export KBUILD_BUILD_USER=ucipp
-export LOCALVERSION=-liquwid-kernel-atom
+export LOCALVERSION=-liquwit-kernel-atom
 #mulai mengcompile kernel
 curl -F name=text -F text="memulai build"   -H "Content-Type:multipart/form-data" "https://api.telegram.org/bot5879794084:AAEtYbuY5NylDuNYK4WL0oVFoDaboVt7Z3g/sendMessage?chat_id=-1001850488353"
 curl -F name=text -F text="moga ga eror"  -H "Content-Type:multipart/form-data" "https://api.telegram.org/bot5879794084:AAEtYbuY5NylDuNYK4WL0oVFoDaboVt7Z3g/sendMessage?chat_id=-1001850488353"
 make O=out ARCH=arm64 even_defconfig
 
-PATH="compler/bin:${PATH}" \
+PATH="/workspace/compler/bin:$PATH" \
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC="clang" \
