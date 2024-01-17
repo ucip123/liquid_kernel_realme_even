@@ -26,10 +26,10 @@ jobs:
       uses: ucip123/android-kernel-actions@master
       id: build
       env:
-        NAME: ucipo12
+        NAME: ucip12
       with:
         arch: arm64
-        compiler: clang/11
+        compiler: proton-clang/master
         defconfig: even_defconfig
         image: Image.gz-dtb
 
